@@ -1,0 +1,38 @@
+{
+  "name": "@theiliad/tictoc",
+  "version": "1.0.0",
+  "description": "A framework-agnostic automated table of contents component!",
+  "module": "bundle_es.js",
+  "browser": "bundle_iife.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "rollup -c && tsc",
+    "build:watch": "rollup -c -w && tsc",
+    "deploy": "./scripts/deploy.sh"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/GopherLabsLtd/ticTOC.git"
+  },
+  "keywords": [
+    "table of contents",
+    "TOC",
+    "typescript"
+  ],
+  "author": "Gopher Labs Ltd.",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/GopherLabsLtd/ticTOC/issues"
+  },
+  "homepage": "https://github.com/GopherLabsLtd/ticTOC#readme",
+  "dependencies": {
+    "rollup": "^1.10.1",
+    "rollup-plugin-terser": "^4.0.4",
+    "stickybits": "^3.6.5",
+    "typescript": "^3.4.5"
+  },
+  "devDependencies": {
+    "rollup-plugin-sass": "^1.2.2",
+    "rollup-plugin-typescript2": "^0.21.0"
+  }
+}

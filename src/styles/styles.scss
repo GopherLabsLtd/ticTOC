@@ -1,0 +1,17 @@
+div.ticTOC {
+    font-size: 13px;
+
+    a {
+        display: block;
+        text-decoration: none;
+        color: #4e4e4e;
+
+        &:hover {
+            color: #7725dc;
+        }
+
+        &.active {
+            color: #400cd4;
+        }
+    }
+}

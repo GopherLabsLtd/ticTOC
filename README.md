@@ -14,6 +14,9 @@
 
 ## Intro
 
+## Demo
+Checkout the demo page [here](https://tictoc.netlify.com/).
+
 ## Getting started
 
 ### Installation:

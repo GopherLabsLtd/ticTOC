@@ -27,7 +27,7 @@ export default {
 		typescript({
 			typescript: require('typescript'),
 		}),
-		terser(),
+		// terser(),
 		// CSS plugins
 		sass({
 			// Write all styles to the bundle destination where .js is replaced by .css

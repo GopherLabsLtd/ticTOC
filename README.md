@@ -1,18 +1,7 @@
-<p align="center">
-	<h1 align="center">ticTOC</h1>
-	<p align="center">
-		A framework-agnostic automated table of contents component!
-		<br /><br />
-		<a href="https://www.npmjs.com/package/@theiliad/tictoc">
-			<img src="https://img.shields.io/npm/v/@theiliad/tictoc.svg" />
-		</a>
-		<a href="https://github.com/GopherLabsLtd/ticTOC/blob/master/LICENSE.md">
-		    <img src="https://img.shields.io/npm/l/@theiliad/tictoc.svg" alt="license">
-		</a>
-	</p>
-</p>
+# TicTOC [![NPM package](https://img.shields.io/npm/v/@theiliad/tictoc.svg)](https://www.npmjs.com/package/@theiliad/tictoc) [![License](https://img.shields.io/npm/l/@theiliad/tictoc.svg)](https://github.com/GopherLabsLtd/ticTOC/blob/master/LICENSE.md)
 
-## Intro
+A framework-agnostic automated table of contents component!
+
 
 ## Demo
 Checkout the demo page [here](https://tictoc.netlify.com/).

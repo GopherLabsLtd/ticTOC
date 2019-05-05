@@ -1,5 +1,9 @@
 $border_color: #dedede;
-$hover_color: #7725dc;
+
+$anchor_color: #4e4e4e;
+$hover_color: #4d1ade;
+$active_color: #400cd4;
+
 $transition: all .2s ease-out;
 
 div.ticTOC {
@@ -17,9 +21,9 @@ div.ticTOC {
                 position: absolute;
                 top: 6.4px;
                 left: -3px;
-                background: $hover_color;
                 width: 6px;
                 height: 6px;
+                background: $border_color;
                 border-radius: 50%;
                 opacity: 0;
             }
@@ -33,15 +37,22 @@ div.ticTOC {
             a {
                 display: block;
                 text-decoration: none;
-                color: #4e4e4e;
+                color: $anchor_color;
 
                 &:hover {
                     color: $hover_color;
                 }
+            }
 
-                &.active {
+            &.active {
+                &:before {
+                    opacity: 1;
+                    background: $active_color;
+                }
+
+                a {
                     font-weight: 700;
-                    color: #400cd4;
+                    color: $active_color;
                 }
             }
             

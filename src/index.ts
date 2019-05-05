@@ -93,14 +93,14 @@ export default class TicTOC {
 			}
 
 			if (elementToHighlight) {
-				const anchorElement = document.querySelector(`a.ticTOC_anchor.${elementToHighlight.id}`);
-				if (this.lastActiveAnchor !== anchorElement) {
+				const liElement = document.querySelector(`li.ticTOC_li.${elementToHighlight.id}`);
+				if (this.lastActiveAnchor !== liElement) {
 					if (this.lastActiveAnchor) {
 						this.lastActiveAnchor.classList.remove("active");
 					}
 
-					anchorElement.classList.add("active");
-					this.lastActiveAnchor = anchorElement as HTMLElement;
+					liElement.classList.add("active");
+					this.lastActiveAnchor = liElement as HTMLElement;
 				}
 			}
 		};
@@ -128,7 +128,7 @@ export default class TicTOC {
 			if (i === 0 && headingElement.tagName.toLowerCase() === "h1") {
 				liClassToUse = "ticTOC_title";
 			}
-			li.className = [`ticTOC_li`, liClassToUse].join(" ");
+			li.className = [`ticTOC_li ${heading.id}`, liClassToUse].join(" ");
 
 			// Carete anchors
 			const link = document.createElement("a");

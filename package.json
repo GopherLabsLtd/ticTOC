@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "A framework-agnostic automated table of contents component!",
   "module": "bundle_es.js",
-  "browser": "bundle_iife.js",
+  "browser": "bundle_browser.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "rollup -c && tsc",

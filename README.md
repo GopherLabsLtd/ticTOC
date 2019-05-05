@@ -2,7 +2,7 @@
 
 A framework-agnostic automated table of contents component! Super simple to use, just provide a content container and another container where the TOC would be mounted, and Voila!
 
-![Screenshot](./docs/preview.png)
+<img src="./docs/preview.png" />
 
 ## Demo
 Checkout the demo page [here](https://tictoc.netlify.com/).

@@ -36,5 +36,8 @@
   "devDependencies": {
     "rollup-plugin-sass": "^1.2.2",
     "rollup-plugin-typescript2": "^0.21.0"
+  },
+  "publishConfig": {
+    "access": "public"
   }
 }

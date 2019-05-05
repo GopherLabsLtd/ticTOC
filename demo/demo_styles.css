@@ -17,6 +17,10 @@ img {
     max-width: 500px;
 }
 
+a {
+    color: #4d1ade;
+}
+
 .container {
     padding-right: 15px;
     padding-left: 15px;
@@ -49,6 +53,42 @@ img {
     margin-left: auto;
 }
 
+div.banner {
+    padding: 15px 0;
+    background: #400cd4;
+    color: #fff;
+    text-align: center;
+}
+
+div.banner span {
+    font-size: 0.85rem;
+}
+
+
+/*
+ * Navbar
+ */
+div.nav {
+    background: #400cd4;
+}
+
+nav.navbar.is-dark {
+    background: transparent;
+}
+
+nav.navbar div.navbar-start a.navbar-item {
+    padding: 0;
+    font-weight: 800;
+    font-size: 1.3rem;
+}
+
+nav.navbar div.navbar-start a.navbar-item:hover {
+    background: transparent !important;
+}
+
+/*
+ * Content
+ */
 div.columns {
     margin-top: 45px;
 }
@@ -59,4 +99,9 @@ div#article-content {
 
 div.toc-column {
     max-width: 200px;
+}
+
+footer.footer {
+    margin-top: 60px;
+    padding: 4rem 0;
 }

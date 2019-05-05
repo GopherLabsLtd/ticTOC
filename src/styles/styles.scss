@@ -15,6 +15,7 @@ div.ticTOC {
         li {
             position: relative;
             padding-left: 15px;
+            margin-bottom: 7.5px;
 
             &:before {
                 content: "";
@@ -55,17 +56,26 @@ div.ticTOC {
                     color: $active_color;
                 }
             }
-            
-            &.ticTOC_title {
-                a {
-                    &:after {
-                        content: "";
-                        display: block;
-                        width: 50%;
-                        height: 1px;
-                        margin: 10px 0;
-                        background: $border_color;
+
+            /**
+            *   Heading types
+            */
+            &.type_ {
+                &title {
+                    a {
+                        &:after {
+                            content: "";
+                            display: block;
+                            width: 50%;
+                            height: 1px;
+                            margin-top: 10px;
+                            background: $border_color;
+                        }
                     }
+                }
+
+                &subitem {
+                    padding-left: 30px;
                 }
             }
         }

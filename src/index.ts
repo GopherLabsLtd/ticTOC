@@ -11,12 +11,62 @@ export default class TicTOC {
 	options: Interfaces.TOCOptions;
 	headings: Array<Interfaces.Heading> = [];
 
-	lastActiveAnchor: HTMLElement;
+	lastActiveItem: HTMLElement;
 
 	constructor(options) {
 		this.options = Object.assign({}, Configurations.DEFAULT_OPTIONS, options);
 
 		this.generateTOC();
+	}
+
+	generateTOC() {
+		// Process all headings into an object
+		this.processHeadings();
+
+		// Mount TOC
+		this.mountTOC();
+	}
+
+	processHeadings() {
+		const { HEADING_TYPES } = Configurations;
+		const headingElements = this.getAllHeadingElements();
+
+		// Keep track of parent items
+		let lastParentItem;
+		headingElements.forEach((headingElement, i) => {
+			// If the DOM element has no ID, assign one to it
+			let elementID = headingElement.id;
+			if (!elementID) {
+				elementID = `ticTOC_heading_${i}`;
+
+				// Assign an ID to the heading element
+				headingElement.id = elementID;
+			}
+
+			// TODO - Refactor for more scalability - once supporting more selectors for headings
+			// Determine the kind of the heading
+			const headingTagName = headingElement.tagName.toLowerCase();
+
+			let headingType;
+			if (i === 0 && headingTagName === "h1") {
+				headingType = HEADING_TYPES.TITLE;
+			} else {
+				// TODO - Second condition would need to change if more varieties of selectors are supported
+				if (lastParentItem && headingTagName > lastParentItem) {
+					headingType = HEADING_TYPES.SUBTITEM;
+				} else {
+					headingType = HEADING_TYPES.ITEM;
+					lastParentItem = headingTagName;
+				}
+			}
+
+			// Save heading info
+			this.headings.push({
+				title: headingElement.innerText,
+				id: elementID,
+				type: headingType
+			});
+		});
 	}
 
     /**
@@ -32,48 +82,22 @@ export default class TicTOC {
 		return Array.prototype.slice.call(headingsNodeList);
 	}
 
-	generateTOC() {
-		const headingElements = this.getAllHeadingElements();
-		headingElements.forEach((headingElement, i) => {
-			let elementID = headingElement.id;
-			if (!elementID) {
-				elementID = `ticTOC_heading_${i}`;
-				// Assign an ID to the heading element
-				headingElement.id = elementID;
-			}
-
-			// Save heading info
-			this.headings.push({
-				title: headingElement.innerText,
-				id: elementID
-			});
-		});
-
-		// Mount TOC
-		this.mountTOC();
-	}
-
 	addScrollEventListeners() {
 		const scrollHandler = e => {
 			const pageScrollPosition = window.pageYOffset;
-			// console.log("PAGE POS", pageScrollPosition)
 
 			// Get distances of all headings
 			// From scroll position
-			let positiveDistanceExists = false;
 			let elementToHighlight;
+			// If the visible bottom of the page is further than or equal to page height
 			if (pageScrollPosition + window.innerHeight >= getPageHeight()) {
 				elementToHighlight = this.headings[this.headings.length - 1];
-			} else if (pageScrollPosition === 0) {
+			} else if (pageScrollPosition === 0) { // If user hasn't scrolled yet
 				elementToHighlight = this.headings[0];
 			} else {
 				let headingDistances = this.headings.map(heading => {
 					const element = document.getElementById(heading.id);
 					const distance = pageScrollPosition - element.offsetTop;
-
-					if (distance >= 0) {
-						positiveDistanceExists = true;
-					}
 
 					return {
 						id: heading.id,
@@ -81,26 +105,23 @@ export default class TicTOC {
 					};
 				});
 
+				// Remove all negative values, and sort by distance
 				headingDistances = headingDistances.filter(hD => hD.distance >= 0)
-					.sort((a, b) => a.distance - b.distance)
-				// let distancesToFilter = headingDistances;
-				// if (positiveDistanceExists) {
-				// 	// Take out all negative values
-				// 	distancesToFilter = headingDistances.filter(distance => distance >= 0)
-				// }
+					.sort((a, b) => a.distance - b.distance);
 
 				elementToHighlight = headingDistances[0];
 			}
 
 			if (elementToHighlight) {
 				const liElement = document.querySelector(`li.ticTOC_li.${elementToHighlight.id}`);
-				if (this.lastActiveAnchor !== liElement) {
-					if (this.lastActiveAnchor) {
-						this.lastActiveAnchor.classList.remove("active");
+				if (this.lastActiveItem !== liElement) {
+					// Remove `active` class from last highlighted anchor
+					if (this.lastActiveItem) {
+						this.lastActiveItem.classList.remove("active");
 					}
 
 					liElement.classList.add("active");
-					this.lastActiveAnchor = liElement as HTMLElement;
+					this.lastActiveItem = liElement as HTMLElement;
 				}
 			}
 		};
@@ -119,16 +140,10 @@ export default class TicTOC {
 
 		const ul = document.createElement("ul");
 		// Create list items for every headings
-		this.headings.forEach((heading, i) => {
-			const headingElement = document.getElementById(heading.id);
-
+		this.headings.forEach(heading => {
 			// Create list item
 			const li = document.createElement("li");
-			let liClassToUse = "";
-			if (i === 0 && headingElement.tagName.toLowerCase() === "h1") {
-				liClassToUse = "ticTOC_title";
-			}
-			li.className = [`ticTOC_li ${heading.id}`, liClassToUse].join(" ");
+			li.className = `ticTOC_li ${heading.id} type_${heading.type}`;
 
 			// Carete anchors
 			const link = document.createElement("a");
@@ -140,6 +155,7 @@ export default class TicTOC {
 			ul.appendChild(li);
 		});
 
+		// Add <ul> to the TOC holder
 		tocHolder.appendChild(ul);
 
 		// Add TOC holder to specified holder

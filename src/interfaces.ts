@@ -16,4 +16,5 @@ export interface TOCOptions {
 export interface Heading {
 	id: string;
 	title: string;
+	type: string;
 }

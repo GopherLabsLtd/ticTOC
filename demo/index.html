@@ -3,7 +3,7 @@
 
 <head>
 	<meta charset="UTF-8">
-	<title>ticTOC</title>
+	<title>TicTOC Demo - Javascript table of contents generator</title>
 	<meta name="description" content="ticTOC">
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.4/css/bulma.min.css">
 	<link rel="stylesheet" href="./demo_styles.css">
@@ -12,179 +12,221 @@
 	<script src="../dist/bundle_iife.js"></script>
 </head>
 
-<body class="container">
-	<div class="columns">
-		<div class="column">
-			<div id="article-content" class="content">
-				<h1 style="margin-bottom: 5px;">Netlify Dev - Netlify on Your Local Computer</h1>
-				<div class="author">By <a href="/@jamesqquick" title="James Quick">
-						James Quick
-					</a>
-					<a class="m-l-xs" href="https://twitter.com/jamesqquick" title="Follow @jamesqquick on Twitter">
-						(@jamesqquick)
-					</a>
-				</div>
-				<p style="margin-top: 30px;">Netlify is never short on <a href="https://my.scotch.io/posts/46820">new
-						and exciting features</a>.
-					At <a href="https://jamstackconf.com/">JAMstack Conf</a> in New York City, they lived up to the hype
-					again.
-					Netlify announced <a href="https://www.netlify.com/products/dev/">Netlify Dev</a>, allowing you to
-					"<strong>run **[</strong>our<strong>]</strong> entire platform on your laptop**". Let's see it in
-					action.
-				</p>
-
-				<p><img alt=""
-						data-src="https://scotch-res.cloudinary.com/image/upload/dpr_2,w_650,q_auto:good,f_auto/v1555034042/eeklvazznxgwxtensqtp.png"
-						class="loaded"
-						src="https://scotch-res.cloudinary.com/image/upload/dpr_2,w_650,q_auto:good,f_auto/v1555034042/eeklvazznxgwxtensqtp.png"
-						data-was-processed="true"></p>
-				<blockquote>
-					<p>"Preview it all - site generation, functions, and edge logic."</p>
-				</blockquote>
-				<h2 class="is-first">
-					Getting Started
-				</h2>
-				<p>To use Netilfy Dev, you'll just need to add one npm package globally on your machine. If you already
-					have
-					this package installed you may need to update it.</p>
-				<pre class="language-bash"
-					data-title="bash"><code class="language-bash"><span class="token function">npm</span> <span class="token function">install</span> netlify-cli -g</code></pre>
-				<p>With the package installed, inside of your website directory, you can run the following command.</p>
-				<pre class="language-bash" data-title="bash"><code class="language-bash">netlify dev --live</code></pre>
-				<p>When you run this command, it will automatically figure out how to run your website. This works for
-					the
-					following types of static sites.</p>
-				<ul>
-					<li>Gatsby</li>
-					<li>Hugo</li>
-					<li>Jekyll</li>
-					<li>React Static</li>
-					<li>Eleventy</li>
-					<li>and MORE!</li>
-				</ul>
-				<p>After running the command, you can see it figured out it needed to run *<em>gatsby develop *</em>to
-					run my
-					site.</p>
-				<p><img alt=""
-						data-src="https://scotch-res.cloudinary.com/image/upload/dpr_2,w_650,q_auto:good,f_auto/v1555033767/czquvrvmyziviztceoaa.png"
-						class="loaded"
-						src="https://scotch-res.cloudinary.com/image/upload/dpr_2,w_650,q_auto:good,f_auto/v1555033767/czquvrvmyziviztceoaa.png"
-						data-was-processed="true"></p>
-				<p><img alt=""
-						data-src="https://scotch-res.cloudinary.com/image/upload/dpr_2,w_650,q_auto:good,f_auto/v1555033779/jkwzvyvlqtykylfr8hgq.png"
-						class="loaded"
-						src="https://scotch-res.cloudinary.com/image/upload/dpr_2,w_650,q_auto:good,f_auto/v1555033779/jkwzvyvlqtykylfr8hgq.png"
-						data-was-processed="true"></p>
-				<h2 class="false">
-					Connect A Netilfy Site
-				</h2>
-				<p>Connecting to an existing Netlify site is easy by running the following command.</p>
-				<pre class="language-bashe" data-title="bashe"><code class="language-bashe">netlify link</code></pre>
-				<p>You could also run *<em>netlify init *</em>if you don't already have a site deployed on Netlify.
-					Since my
-					site is connected through my Github repository, I can tell it to do that. </p>
-				<p>Note - you might have to authenticate to Netlify to continue.</p>
-				<p><img alt=""
-						data-src="https://scotch-res.cloudinary.com/image/upload/dpr_2,w_650,q_auto:good,f_auto/v1555033802/oruiimyhrnn6imlsbbt6.png"
-						class="loaded"
-						src="https://scotch-res.cloudinary.com/image/upload/dpr_2,w_650,q_auto:good,f_auto/v1555033802/oruiimyhrnn6imlsbbt6.png"
-						data-was-processed="true"></p>
-				<p><img alt=""
-						data-src="https://scotch-res.cloudinary.com/image/upload/dpr_2,w_650,q_auto:good,f_auto/v1555033828/ugq5my9xh7rsidvhu6ic.png"
-						class="loaded"
-						src="https://scotch-res.cloudinary.com/image/upload/dpr_2,w_650,q_auto:good,f_auto/v1555033828/ugq5my9xh7rsidvhu6ic.png"
-						data-was-processed="true"></p>
-				<p><img alt=""
-						data-src="https://scotch-res.cloudinary.com/image/upload/dpr_2,w_650,q_auto:good,f_auto/v1555033843/fs4qdc0pzvoszoceuypp.png"
-						class="loaded"
-						src="https://scotch-res.cloudinary.com/image/upload/dpr_2,w_650,q_auto:good,f_auto/v1555033843/fs4qdc0pzvoszoceuypp.png"
-						data-was-processed="true"></p>
-				<img class="lazy loaded"
-					data-src="https://track.mailerlite.com/webforms/o/1112154/c7r3j6?vaa4d608450783acdc64d5338ff94f6d5"
-					width="1" height="1"
-					style="max-width: 1px; max-height: 1px; visibility: hidden; padding: 0; margin: 0; display: block;"
-					border="0"
-					src="https://track.mailerlite.com/webforms/o/1112154/c7r3j6?vaa4d608450783acdc64d5338ff94f6d5"
-					data-was-processed="true">
-				<p>Another thing to notice in my logs is that it included an environment variable. It's actually
-					injecting that
-					environment variables from the deployed website into the local build. I use this variable on my site
-					to
-					handle email subscribes. This means you might not ever need local environment properties defined.
-				</p>
-				<p>Note - I still have an open question of whether you can separate between dev and production
-					environment
-					variables</p>
-				<p><img alt=""
-						data-src="https://scotch-res.cloudinary.com/image/upload/dpr_2,w_650,q_auto:good,f_auto/v1555034354/nxwyuyhp11xnyb6ak5ff.png"
-						class="loaded"
-						src="https://scotch-res.cloudinary.com/image/upload/dpr_2,w_650,q_auto:good,f_auto/v1555034354/nxwyuyhp11xnyb6ak5ff.png"
-						data-was-processed="true"></p>
-				<p>At the end of the log output, you can see my site started up successfully.</p>
-				<p><img alt=""
-						data-src="https://scotch-res.cloudinary.com/image/upload/dpr_2,w_650,q_auto:good,f_auto/v1555033859/pe5thkefh9jzotkcdz1g.png"
-						class="loaded"
-						src="https://scotch-res.cloudinary.com/image/upload/dpr_2,w_650,q_auto:good,f_auto/v1555033859/pe5thkefh9jzotkcdz1g.png"
-						data-was-processed="true"></p>
-				<h2 class="false">
-					Stream Your Development Server Live
-				</h2>
-				<p>Another piece of the logs that we haven't touched on yet is the fact that my "development server" is
-					available globally.</p>
-				<p><img alt=""
-						data-src="https://scotch-res.cloudinary.com/image/upload/dpr_2,w_650,q_auto:good,f_auto/v1555033939/bkccjh6qxainsuqvunrq.png"
-						class="loaded"
-						src="https://scotch-res.cloudinary.com/image/upload/dpr_2,w_650,q_auto:good,f_auto/v1555033939/bkccjh6qxainsuqvunrq.png"
-						data-was-processed="true"></p>
-				<p><img alt=""
-						data-src="https://scotch-res.cloudinary.com/image/upload/dpr_2,w_650,q_auto:good,f_auto/v1555033956/zcdy9qpome75gx7peuyj.png"
-						class="loaded"
-						src="https://scotch-res.cloudinary.com/image/upload/dpr_2,w_650,q_auto:good,f_auto/v1555033956/zcdy9qpome75gx7peuyj.png"
-						data-was-processed="true"></p>
-				<p>And if I go to that URL, I can see my site is actually available!</p>
-				<p><img alt=""
-						data-src="https://scotch-res.cloudinary.com/image/upload/dpr_2,w_650,q_auto:good,f_auto/v1555033982/htbp1f4bytynkbi8jhoi.png"
-						class="loaded"
-						src="https://scotch-res.cloudinary.com/image/upload/dpr_2,w_650,q_auto:good,f_auto/v1555033982/htbp1f4bytynkbi8jhoi.png"
-						data-was-processed="true"></p>
-				<h2 class="false">
-					Netlify Functions
-				</h2>
-				<p>One last built in feature of using the <strong>netlify dev</strong> command from above is that is
-					also
-					runs/serves your lambda functions. If you look closely at the logs, you'll see two "connected"
-					messages. One
-					is for your site and the other (the first one below) is for your Netlify Functions.</p>
-				<p><img alt=""
-						data-src="https://scotch-res.cloudinary.com/image/upload/dpr_2,w_650,q_auto:good,f_auto/v1555097009/yvlly9makdex1uerwcpv.png"
-						class="loaded"
-						src="https://scotch-res.cloudinary.com/image/upload/dpr_2,w_650,q_auto:good,f_auto/v1555097009/yvlly9makdex1uerwcpv.png"
-						data-was-processed="true"></p>
-				<p>Thanks to this I can no go to postman and test my *<em>subscribe *</em>function which accepts an
-					email,
-					validates it, and sends it off to Mailchimp to add to a mailing list.</p>
-				<p>As you can see in the screenshot below (although it might be small), I sent a post request to
-					*<em>localhost:34567 *</em>(the port for my Netlify Functions), and got a response back!</p>
-				<p><img alt=""
-						data-src="https://scotch-res.cloudinary.com/image/upload/dpr_2,w_650,q_auto:good,f_auto/v1555097105/vjjc0xlszmysezbq8mkw.png"
-						class="loaded"
-						src="https://scotch-res.cloudinary.com/image/upload/dpr_2,w_650,q_auto:good,f_auto/v1555097105/vjjc0xlszmysezbq8mkw.png"
-						data-was-processed="true"></p>
-				<h2 class="false">
-					Conclusion
-				</h2>
-				<p>Netlify continues to impress. Netlify dev definitely has some awesome features that are exciting for
-					the
-					future of static site development. I'm excited to see where they go from here and how they continue
-					to
-					improve in everything they do and provide.</p>
+<body>
+	<div class="nav">
+		<nav class="navbar is-dark container" role="navigation" aria-label="main navigation">
+			<div class="navbar-start">
+				<a class="navbar-item" href="https://github.com/GopherLabsLtd/ticTOC">
+					TicTOC
+				</a>
 			</div>
-		</div>
-		<div class="column is-narrow toc-column">
-			<div id="toc">
+
+			<div class="navbar-end">
+				<div class="navbar-item">
+					<span>This is a demo page</span> <a class="button is-small is-link is-inverted is-outlined" style="margin-left: 10px;" href="https://github.com/GopherLabsLtd/ticTOC#readme">README</a>
+				</div>
+			</div>
+		</nav>
+	</div>
+
+	<div class="container">
+		<div class="columns">
+			<div class="column">
+				<div id="article-content" class="content">
+					<h1 style="margin-bottom: 5px;">Netlify Dev - Netlify on Your Local Computer</h1>
+					<div class="author">By James Quick <a class="m-l-xs" href="https://twitter.com/jamesqquick" title="Follow @jamesqquick on Twitter">
+							(@jamesqquick)
+						</a>
+					</div>
+					<p style="margin-top: 30px;">Netlify is never short on <a
+							href="https://my.scotch.io/posts/46820">new
+							and exciting features</a>.
+						At <a href="https://jamstackconf.com/">JAMstack Conf</a> in New York City, they lived up to the
+						hype
+						again.
+						Netlify announced <a href="https://www.netlify.com/products/dev/">Netlify Dev</a>, allowing you
+						to
+						"<strong>run [</strong>our<strong>]</strong> entire platform on your laptop". Let's see it in
+						action.
+					</p>
+
+					<p><img alt=""
+							data-src="https://scotch-res.cloudinary.com/image/upload/dpr_2,w_650,q_auto:good,f_auto/v1555034042/eeklvazznxgwxtensqtp.png"
+							class="loaded"
+							src="https://scotch-res.cloudinary.com/image/upload/dpr_2,w_650,q_auto:good,f_auto/v1555034042/eeklvazznxgwxtensqtp.png"
+							data-was-processed="true"></p>
+					<blockquote>
+						<p>"Preview it all - site generation, functions, and edge logic."</p>
+					</blockquote>
+					<h2 class="is-first">
+						Getting Started
+					</h2>
+					<p>To use Netilfy Dev, you'll just need to add one npm package globally on your machine. If you
+						already
+						have
+						this package installed you may need to update it.</p>
+					<pre class="language-bash"
+						data-title="bash"><code class="language-bash"><span class="token function">npm</span> <span class="token function">install</span> netlify-cli -g</code></pre>
+					<p>With the package installed, inside of your website directory, you can run the following command.
+					</p>
+					<pre class="language-bash"
+						data-title="bash"><code class="language-bash">netlify dev --live</code></pre>
+					<p>When you run this command, it will automatically figure out how to run your website. This works
+						for
+						the
+						following types of static sites.</p>
+					<ul>
+						<li>Gatsby</li>
+						<li>Hugo</li>
+						<li>Jekyll</li>
+						<li>React Static</li>
+						<li>Eleventy</li>
+						<li>and MORE!</li>
+					</ul>
+					<p>After running the command, you can see it figured out it needed to run *<em>gatsby develop
+							*</em>to
+						run my
+						site.</p>
+					<p><img alt=""
+							data-src="https://scotch-res.cloudinary.com/image/upload/dpr_2,w_650,q_auto:good,f_auto/v1555033767/czquvrvmyziviztceoaa.png"
+							class="loaded"
+							src="https://scotch-res.cloudinary.com/image/upload/dpr_2,w_650,q_auto:good,f_auto/v1555033767/czquvrvmyziviztceoaa.png"
+							data-was-processed="true"></p>
+					<p><img alt=""
+							data-src="https://scotch-res.cloudinary.com/image/upload/dpr_2,w_650,q_auto:good,f_auto/v1555033779/jkwzvyvlqtykylfr8hgq.png"
+							class="loaded"
+							src="https://scotch-res.cloudinary.com/image/upload/dpr_2,w_650,q_auto:good,f_auto/v1555033779/jkwzvyvlqtykylfr8hgq.png"
+							data-was-processed="true"></p>
+					<h2 class="false">
+						Connect A Netilfy Site
+					</h2>
+					<p>Connecting to an existing Netlify site is easy by running the following command.</p>
+					<pre class="language-bashe"
+						data-title="bashe"><code class="language-bashe">netlify link</code></pre>
+					<p>You could also run *<em>netlify init *</em>if you don't already have a site deployed on Netlify.
+						Since my
+						site is connected through my Github repository, I can tell it to do that. </p>
+					<h3>Authentication</h3>
+					<p>You might have to authenticate to Netlify to continue.</p>
+					<p><img alt=""
+							data-src="https://scotch-res.cloudinary.com/image/upload/dpr_2,w_650,q_auto:good,f_auto/v1555033802/oruiimyhrnn6imlsbbt6.png"
+							class="loaded"
+							src="https://scotch-res.cloudinary.com/image/upload/dpr_2,w_650,q_auto:good,f_auto/v1555033802/oruiimyhrnn6imlsbbt6.png"
+							data-was-processed="true"></p>
+					<p><img alt=""
+							data-src="https://scotch-res.cloudinary.com/image/upload/dpr_2,w_650,q_auto:good,f_auto/v1555033828/ugq5my9xh7rsidvhu6ic.png"
+							class="loaded"
+							src="https://scotch-res.cloudinary.com/image/upload/dpr_2,w_650,q_auto:good,f_auto/v1555033828/ugq5my9xh7rsidvhu6ic.png"
+							data-was-processed="true"></p>
+					<p><img alt=""
+							data-src="https://scotch-res.cloudinary.com/image/upload/dpr_2,w_650,q_auto:good,f_auto/v1555033843/fs4qdc0pzvoszoceuypp.png"
+							class="loaded"
+							src="https://scotch-res.cloudinary.com/image/upload/dpr_2,w_650,q_auto:good,f_auto/v1555033843/fs4qdc0pzvoszoceuypp.png"
+							data-was-processed="true"></p>
+					<img class="lazy loaded"
+						data-src="https://track.mailerlite.com/webforms/o/1112154/c7r3j6?vaa4d608450783acdc64d5338ff94f6d5"
+						width="1" height="1"
+						style="max-width: 1px; max-height: 1px; visibility: hidden; padding: 0; margin: 0; display: block;"
+						border="0"
+						src="https://track.mailerlite.com/webforms/o/1112154/c7r3j6?vaa4d608450783acdc64d5338ff94f6d5"
+						data-was-processed="true">
+					<h3>Environment Variables</h3>
+					<p>Another thing to notice in my logs is that it included an environment variable. It's actually
+						injecting that
+						environment variables from the deployed website into the local build. I use this variable on my
+						site
+						to
+						handle email subscribes. This means you might not ever need local environment properties
+						defined.
+					</p>
+					<p>Note - I still have an open question of whether you can separate between dev and production
+						environment
+						variables</p>
+					<p><img alt=""
+							data-src="https://scotch-res.cloudinary.com/image/upload/dpr_2,w_650,q_auto:good,f_auto/v1555034354/nxwyuyhp11xnyb6ak5ff.png"
+							class="loaded"
+							src="https://scotch-res.cloudinary.com/image/upload/dpr_2,w_650,q_auto:good,f_auto/v1555034354/nxwyuyhp11xnyb6ak5ff.png"
+							data-was-processed="true"></p>
+					<p>At the end of the log output, you can see my site started up successfully.</p>
+					<p><img alt=""
+							data-src="https://scotch-res.cloudinary.com/image/upload/dpr_2,w_650,q_auto:good,f_auto/v1555033859/pe5thkefh9jzotkcdz1g.png"
+							class="loaded"
+							src="https://scotch-res.cloudinary.com/image/upload/dpr_2,w_650,q_auto:good,f_auto/v1555033859/pe5thkefh9jzotkcdz1g.png"
+							data-was-processed="true"></p>
+					<h2 class="false">
+						Stream Your Development Server Live
+					</h2>
+					<p>Another piece of the logs that we haven't touched on yet is the fact that my "development server"
+						is
+						available globally.</p>
+					<p><img alt=""
+							data-src="https://scotch-res.cloudinary.com/image/upload/dpr_2,w_650,q_auto:good,f_auto/v1555033939/bkccjh6qxainsuqvunrq.png"
+							class="loaded"
+							src="https://scotch-res.cloudinary.com/image/upload/dpr_2,w_650,q_auto:good,f_auto/v1555033939/bkccjh6qxainsuqvunrq.png"
+							data-was-processed="true"></p>
+					<p><img alt=""
+							data-src="https://scotch-res.cloudinary.com/image/upload/dpr_2,w_650,q_auto:good,f_auto/v1555033956/zcdy9qpome75gx7peuyj.png"
+							class="loaded"
+							src="https://scotch-res.cloudinary.com/image/upload/dpr_2,w_650,q_auto:good,f_auto/v1555033956/zcdy9qpome75gx7peuyj.png"
+							data-was-processed="true"></p>
+					<p>And if I go to that URL, I can see my site is actually available!</p>
+					<p><img alt=""
+							data-src="https://scotch-res.cloudinary.com/image/upload/dpr_2,w_650,q_auto:good,f_auto/v1555033982/htbp1f4bytynkbi8jhoi.png"
+							class="loaded"
+							src="https://scotch-res.cloudinary.com/image/upload/dpr_2,w_650,q_auto:good,f_auto/v1555033982/htbp1f4bytynkbi8jhoi.png"
+							data-was-processed="true"></p>
+					<h2 class="false">
+						Netlify Functions
+					</h2>
+					<p>One last built in feature of using the <strong>netlify dev</strong> command from above is that is
+						also
+						runs/serves your lambda functions. If you look closely at the logs, you'll see two "connected"
+						messages. One
+						is for your site and the other (the first one below) is for your Netlify Functions.</p>
+					<p><img alt=""
+							data-src="https://scotch-res.cloudinary.com/image/upload/dpr_2,w_650,q_auto:good,f_auto/v1555097009/yvlly9makdex1uerwcpv.png"
+							class="loaded"
+							src="https://scotch-res.cloudinary.com/image/upload/dpr_2,w_650,q_auto:good,f_auto/v1555097009/yvlly9makdex1uerwcpv.png"
+							data-was-processed="true"></p>
+					<h3>Testing the Function</h3>
+					<p>Thanks to this I can no go to postman and test my *<em>subscribe *</em>function which accepts an
+						email,
+						validates it, and sends it off to Mailchimp to add to a mailing list.</p>
+					<p>As you can see in the screenshot below (although it might be small), I sent a post request to
+						*<em>localhost:34567 *</em>(the port for my Netlify Functions), and got a response back!</p>
+					<p><img alt=""
+							data-src="https://scotch-res.cloudinary.com/image/upload/dpr_2,w_650,q_auto:good,f_auto/v1555097105/vjjc0xlszmysezbq8mkw.png"
+							class="loaded"
+							src="https://scotch-res.cloudinary.com/image/upload/dpr_2,w_650,q_auto:good,f_auto/v1555097105/vjjc0xlszmysezbq8mkw.png"
+							data-was-processed="true"></p>
+					<h2 class="false">
+						Conclusion
+					</h2>
+					<p>Netlify continues to impress. Netlify dev definitely has some awesome features that are exciting
+						for
+						the
+						future of static site development. I'm excited to see where they go from here and how they
+						continue
+						to
+						improve in everything they do and provide.</p>
+				</div>
+			</div>
+			<div class="column is-narrow toc-column">
+				<div id="toc">
+				</div>
 			</div>
 		</div>
 	</div>
+
+	<footer class="footer">
+		<div class="content has-text-centered">
+			<p>
+				<strong>TicTOC</strong> by <a href="https://gopher.it">Gopher Labs</a>. The source code is licensed
+				<a href="http://opensource.org/licenses/mit-license.php">MIT</a>. The demo article can be found on <a
+					href="https://scotch.io/tutorials/netlify-dev-the-power-of-netlify-on-your-local-computer">Scotch.io</a>.
+			</p>
+		</div>
+	</footer>
 	<script src="https://unpkg.com/stickybits@3.6.5/dist/stickybits.min.js"></script>
 	<script>
 		new TicTOC({

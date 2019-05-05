@@ -111,6 +111,12 @@ div#article-content {
     margin-top: -3px;
 }
 
+@media (max-width: 1087px) {
+    div#article-content {
+        margin-top: 15px;
+    }
+}
+
 div.toc-column {
     max-width: 250px;
 }

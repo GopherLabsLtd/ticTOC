@@ -3,19 +3,20 @@ import pkg from './package.json';
 import { terser } from "rollup-plugin-terser";
 import sass from 'rollup-plugin-sass';
 
+const outputDir = process.env.ENV === "demo" ? "./demo/dist" : "./dist"
 export default {
 	input: 'src/index.ts',
 	output: [
 		{
-			file: `dist/index.js`,
+			file: `${outputDir}/index.js`,
 			format: 'cjs'
 		},
 		{
-			file: `dist/${pkg.module}`,
+			file: `${outputDir}/${pkg.module}`,
 			format: 'es'
 		},
 		{
-			file: `dist/${pkg.browser}`,
+			file: `${outputDir}/${pkg.browser}`,
 			format: 'iife',
 			name: 'TicTOC'
 		}
@@ -34,7 +35,7 @@ export default {
 			output: true,
 
 			// Filename to write all styles
-			output: './dist/styles.css'
+			output: `${outputDir}/styles.css`
 		})
 	]
 };

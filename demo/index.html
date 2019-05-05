@@ -4,12 +4,18 @@
 <head>
 	<meta charset="UTF-8">
 	<title>TicTOC Demo - Javascript table of contents generator</title>
-	<meta name="description" content="ticTOC">
+	<meta name="description" content="TicTOC">
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.4/css/bulma.min.css">
 	<link rel="stylesheet" href="./demo_styles.css">
-	<link rel="stylesheet" href="../dist/styles.css">
+	<link rel="stylesheet" href="./dist/styles.css">
 	<link href="https://fonts.googleapis.com/css?family=Montserrat:800|Roboto:400,700" rel="stylesheet">
-	<script src="../dist/bundle_browser.js"></script>
+	<script src="./dist/bundle_browser.js"></script>
+	<script>
+		new TicTOC({
+			contentContainer: document.getElementById("article-content"),
+			mountTo: document.getElementById("toc")
+		});
+	</script>
 </head>
 
 <body>
@@ -230,11 +236,6 @@
 	</footer>
 	<script src="https://unpkg.com/stickybits@3.6.5/dist/stickybits.min.js"></script>
 	<script>
-		new TicTOC({
-			contentContainer: document.getElementById("article-content"),
-			mountTo: document.getElementById("toc")
-		});
-
 		stickybits('#toc', { stickyBitStickyOffset: 20 });
 	</script>
 </body>

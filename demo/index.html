@@ -9,13 +9,6 @@
 	<link rel="stylesheet" href="./demo_styles.css">
 	<link rel="stylesheet" href="./dist/styles.css">
 	<link href="https://fonts.googleapis.com/css?family=Montserrat:800|Roboto:400,700" rel="stylesheet">
-	<script src="./dist/bundle_browser.js"></script>
-	<script>
-		new TicTOC({
-			contentContainer: document.getElementById("article-content"),
-			mountTo: document.getElementById("toc")
-		});
-	</script>
 </head>
 
 <body>
@@ -234,6 +227,13 @@
 			</p>
 		</div>
 	</footer>
+	<script src="./dist/bundle_browser.js"></script>
+	<script>
+		new TicTOC({
+			contentContainer: document.getElementById("article-content"),
+			mountTo: document.getElementById("toc")
+		});
+	</script>
 	<script src="https://unpkg.com/stickybits@3.6.5/dist/stickybits.min.js"></script>
 	<script>
 		stickybits('#toc', { stickyBitStickyOffset: 20 });

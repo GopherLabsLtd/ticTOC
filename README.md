@@ -17,6 +17,7 @@ npm i --save @theiliad/tictoc
 ## Usage
 You need to create a `div` (or any other DOM element) inside of which you'd like the TOC to be mounted (in this case we're using `<div id="toc">`, as well as another element that includes your content (in this case `<div id="article-content">`.
 
+**import/require:**
 ```js
 import TicTOC from "@theiliad/tictoc";
 

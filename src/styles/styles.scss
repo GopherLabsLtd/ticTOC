@@ -1,17 +1,41 @@
+$border_color: #dedede;
+
 div.ticTOC {
     font-size: 13px;
 
-    a {
-        display: block;
-        text-decoration: none;
-        color: #4e4e4e;
+    ul {
+        border-left: 1px solid $border_color;
 
-        &:hover {
-            color: #7725dc;
-        }
+        li {
+            padding-left: 10px;
 
-        &.active {
-            color: #400cd4;
+            a {
+                display: block;
+                text-decoration: none;
+                color: #4e4e4e;
+
+                &:hover {
+                    color: #7725dc;
+                }
+
+                &.active {
+                    font-weight: 700;
+                    color: #400cd4;
+                }
+            }
+            
+            &.ticTOC_title {
+                a {
+                    &:after {
+                        content: "";
+                        display: block;
+                        width: 50%;
+                        height: 1px;
+                        margin: 10px 0;
+                        background: $border_color;
+                    }
+                }
+            }
         }
     }
 }

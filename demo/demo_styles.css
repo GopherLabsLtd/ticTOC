@@ -50,7 +50,11 @@ img {
 }
 
 div.columns {
-    margin-top: 30px;
+    margin-top: 45px;
+}
+
+div#article-content {
+    margin-top: -3px;
 }
 
 div.toc-column {

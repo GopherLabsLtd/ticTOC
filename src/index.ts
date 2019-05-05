@@ -116,15 +116,30 @@ export default class TicTOC {
 		const tocHolder = document.createElement("div");
 		tocHolder.className = Configurations.MOUNTING.CLASSNAME;
 
+		const ul = document.createElement("ul");
 		// Create list items for every headings
-		this.headings.forEach(heading => {
+		this.headings.forEach((heading, i) => {
+			const headingElement = document.getElementById(heading.id);
+
+			// Create list item
+			const li = document.createElement("li");
+			let liClassToUse = "";
+			if (i === 0 && headingElement.tagName.toLowerCase() === "h1") {
+				liClassToUse = "ticTOC_title";
+			}
+			li.className = [`ticTOC_li`, liClassToUse].join(" ");
+
+			// Carete anchors
 			const link = document.createElement("a");
 			link.href = `#${heading.id}`;
 			link.innerText = heading.title;
 			link.className = `ticTOC_anchor ${heading.id}`;
 
-			tocHolder.appendChild(link);
+			li.appendChild(link);
+			ul.appendChild(li);
 		});
+
+		tocHolder.appendChild(ul);
 
 		// Add TOC holder to specified holder
 		mountTo.appendChild(tocHolder);

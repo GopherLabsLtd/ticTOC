@@ -49,16 +49,12 @@ export default class TicTOC {
 			});
 		});
 
-		if (this.options.highlightOnScroll) {
-			this.addScrollEventListeners();
-		}
-
 		// Mount TOC
 		this.mountTOC();
 	}
 
 	addScrollEventListeners() {
-		window.addEventListener("scroll", e => {
+		const scrollHandler = e => {
 			const pageScrollPosition = window.pageYOffset;
 			// console.log("PAGE POS", pageScrollPosition)
 
@@ -68,6 +64,8 @@ export default class TicTOC {
 			let elementToHighlight;
 			if (pageScrollPosition + window.innerHeight >= getPageHeight()) {
 				elementToHighlight = this.headings[this.headings.length - 1];
+			} else if (pageScrollPosition === 0) {
+				elementToHighlight = this.headings[0];
 			} else {
 				let headingDistances = this.headings.map(heading => {
 					const element = document.getElementById(heading.id);
@@ -92,7 +90,6 @@ export default class TicTOC {
 				// }
 
 				elementToHighlight = headingDistances[0];
-				
 			}
 
 			if (elementToHighlight) {
@@ -106,7 +103,11 @@ export default class TicTOC {
 					this.lastActiveAnchor = anchorElement as HTMLElement;
 				}
 			}
-		});
+		};
+
+		window.addEventListener("scroll", scrollHandler);
+
+		scrollHandler(null);
 	}
 
 	mountTOC() {
@@ -143,5 +144,11 @@ export default class TicTOC {
 
 		// Add TOC holder to specified holder
 		mountTo.appendChild(tocHolder);
+
+		// If items need to highlight on scroll
+		// Attach scroll event listeners to the page
+		if (this.options.highlightOnScroll) {
+			this.addScrollEventListeners();
+		}
 	}
 }

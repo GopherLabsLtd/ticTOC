@@ -1,4 +1,6 @@
 $border_color: #dedede;
+$hover_color: #7725dc;
+$transition: all .2s ease-out;
 
 div.ticTOC {
     font-size: 13px;
@@ -7,7 +9,26 @@ div.ticTOC {
         border-left: 1px solid $border_color;
 
         li {
-            padding-left: 10px;
+            position: relative;
+            padding-left: 15px;
+
+            &:before {
+                content: "";
+                position: absolute;
+                top: 6.4px;
+                left: -3px;
+                background: $hover_color;
+                width: 6px;
+                height: 6px;
+                border-radius: 50%;
+                opacity: 0;
+            }
+
+            &:hover {
+                &:before {
+                    opacity: 1;
+                }
+            }
 
             a {
                 display: block;
@@ -15,7 +36,7 @@ div.ticTOC {
                 color: #4e4e4e;
 
                 &:hover {
-                    color: #7725dc;
+                    color: $hover_color;
                 }
 
                 &.active {

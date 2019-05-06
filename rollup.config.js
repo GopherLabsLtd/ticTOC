@@ -9,11 +9,11 @@ export default {
 	output: [
 		{
 			file: `${outputDir}/${pkg.main}`,
-			format: 'cjs'
+			format: 'es'
 		},
 		{
 			file: `${outputDir}/${pkg.module}`,
-			format: 'es'
+			format: 'cjs'
 		},
 		{
 			file: `${outputDir}/${pkg.browser}`,

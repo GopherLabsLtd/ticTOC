@@ -1,9 +1,10 @@
 {
   "name": "@theiliad/tictoc",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "A framework-agnostic automated table of contents component!",
-  "module": "bundle_es.js",
-  "browser": "bundle_browser.js",
+  "main": "index",
+  "module": "bundle_es",
+  "browser": "bundle_browser",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "rollup -c && tsc",

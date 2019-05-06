@@ -12,11 +12,11 @@ export default {
 			format: 'cjs'
 		},
 		{
-			file: `${outputDir}/${pkg.module}`,
+			file: `${outputDir}/${pkg.module}.js`,
 			format: 'es'
 		},
 		{
-			file: `${outputDir}/${pkg.browser}`,
+			file: `${outputDir}/${pkg.browser}.js`,
 			format: 'iife',
 			name: 'TicTOC'
 		}

@@ -1,6 +1,6 @@
 {
   "name": "@theiliad/tictoc",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "A framework-agnostic automated table of contents component!",
   "main": "index",
   "module": "bundle_es",
@@ -29,16 +29,13 @@
     "url": "https://github.com/GopherLabsLtd/ticTOC/issues"
   },
   "homepage": "https://github.com/GopherLabsLtd/ticTOC#readme",
-  "dependencies": {
-    "rollup": "^1.10.1",
-    "rollup-plugin-terser": "^4.0.4",
-    "stickybits": "^3.6.5",
-    "typescript": "^3.4.5"
-  },
   "devDependencies": {
+    "rollup": "^1.10.1",
     "rollup-plugin-sass": "^1.2.2",
+    "rollup-plugin-terser": "^4.0.4",
     "rollup-plugin-typescript2": "^0.21.0",
-    "typedoc": "^0.14.2"
+    "typedoc": "^0.14.2",
+    "typescript": "^3.4.5"
   },
   "publishConfig": {
     "access": "public"

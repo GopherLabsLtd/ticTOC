@@ -11,7 +11,7 @@
     "build:watch": "rollup -c -w && tsc",
     "build:demo": "ENV=demo rollup -c && tsc",
     "build:demo:watch": "ENV=demo rollup -c -w && tsc",
-    "build:docs": "typedoc --out ./demo/docs --mode file --target ES6 ./src",
+    "build:docs": "typedoc --out ./demo/api-reference --mode file --target ES6 ./src",
     "deploy": "./scripts/deploy.sh"
   },
   "repository": {

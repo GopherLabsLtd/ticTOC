@@ -8,15 +8,15 @@ export default {
 	input: 'src/index.ts',
 	output: [
 		{
-			file: `${outputDir}/index.js`,
+			file: `${outputDir}/${pkg.main}`,
 			format: 'cjs'
 		},
 		{
-			file: `${outputDir}/${pkg.module}.js`,
+			file: `${outputDir}/${pkg.module}`,
 			format: 'es'
 		},
 		{
-			file: `${outputDir}/${pkg.browser}.js`,
+			file: `${outputDir}/${pkg.browser}`,
 			format: 'iife',
 			name: 'TicTOC'
 		}

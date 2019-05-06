@@ -7,7 +7,7 @@ import * as Configurations from "./configurations";
 
 const getPageHeight = () => Math.max(document.body.scrollHeight, document.body.offsetHeight, document.body.clientHeight);
 
-export default class TicTOC {
+export class TicTOC {
 	options: Interfaces.TOCOptions;
 	headings: Array<Interfaces.Heading> = [];
 

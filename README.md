@@ -41,4 +41,4 @@ new TicTOC({
 ```
 
 ## API Reference
-The project is built using Typescript, with minimal dependency usage. Typedoc generated API references can be found ![here](https://tictoc.netlify.com/docs).
+The project is built using Typescript, with minimal dependency usage. Typedoc generated API references can be found [here](https://tictoc.netlify.com/docs).

@@ -19,7 +19,8 @@ You need to create a `div` (or any other DOM element) inside of which you'd like
 
 **import/require:**
 ```js
-import TicTOC from "@theiliad/tictoc";
+import TicTOC from "@theiliad/tictoc/index";
+import "@theiliad/tictoc/styles.css";
 
 new TicTOC({
   contentContainer: document.getElementById("article-content"),
@@ -29,7 +30,8 @@ new TicTOC({
 
 **In-browser CDN usage:**
 ```html
-<script src="https://unpkg.com/@theiliad/tictoc"></script>
+<link rel="stylesheet" href="https://unpkg.com/@theiliad/tictoc@{VERSION_NUMBER_HERE}/styles.css">
+<script src="https://unpkg.com/@theiliad/tictoc@{VERSION_NUMBER_HERE}/bundle_browser.js"></script>
 <script>
   new TicTOC({
     contentContainer: document.getElementById("article-content"),

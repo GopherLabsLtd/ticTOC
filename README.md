@@ -33,7 +33,7 @@ new TicTOC({
 <link rel="stylesheet" href="https://unpkg.com/@theiliad/tictoc@{VERSION_NUMBER_HERE}/styles.css">
 <script src="https://unpkg.com/@theiliad/tictoc@{VERSION_NUMBER_HERE}/index.browser.js"></script>
 <script>
-  new TicTOC({
+  new TicTOC.TicTOC({
     contentContainer: document.getElementById("article-content"),
     mountTo: document.getElementById("toc")
   });
